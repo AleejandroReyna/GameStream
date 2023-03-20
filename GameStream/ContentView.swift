@@ -38,12 +38,16 @@ struct LoginAndRegisterView : View {
                 Button("LOGIN") {
                     isLoginActive = true
                 }
+                .foregroundColor(isLoginActive ? .white : .gray)
                 Spacer()
                 Button("REGISTER") {
                     isLoginActive = false
                 }
+                .foregroundColor(isLoginActive ? .gray : .white)
                 Spacer()
             }
+            
+            Spacer(minLength: 42)
             
             if isLoginActive {
                 LoginView()
