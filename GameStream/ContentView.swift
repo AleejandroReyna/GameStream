@@ -16,9 +16,11 @@ struct ContentView: View {
             
             VStack {
                 Image("logo")
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .frame(width: 250)
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .frame(width: 250)
+                .padding(.bottom, 20)
+                .padding(.top, 10)
                 
                 LoginAndRegisterView()
             }
