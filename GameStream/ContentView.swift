@@ -28,14 +28,41 @@ struct ContentView: View {
 
 struct LoginAndRegisterView : View {
     
+    // MARK: States
+    @State var isLoginActive : Bool = true
+    
     var body: some View {
         VStack {
             HStack {
-                Text("LOGIN")
-                Text("REGISTER")
-                
+                Spacer()
+                Button("LOGIN") {
+                    isLoginActive = true
+                }
+                Spacer()
+                Button("REGISTER") {
+                    isLoginActive = false
+                }
+                Spacer()
+            }
+            
+            if isLoginActive {
+                LoginView()
+            } else {
+                RegisterView()
             }
         }
+    }
+}
+
+struct LoginView : View {
+    var body : some View {
+        Text("Login")
+    }
+}
+
+struct RegisterView : View {
+    var body : some View {
+        Text("Register")
     }
 }
 
