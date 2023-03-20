@@ -36,7 +36,6 @@ struct LoginAndRegisterView : View {
     var body: some View {
         VStack {
             HStack {
-                Spacer()
                 Button("LOGIN") {
                     isLoginActive = true
                 }
@@ -46,8 +45,8 @@ struct LoginAndRegisterView : View {
                     isLoginActive = false
                 }
                 .foregroundColor(isLoginActive ? .gray : .white)
-                Spacer()
             }
+            .padding(.horizontal, 30)
             
             Spacer(minLength: 42)
             
@@ -61,8 +60,38 @@ struct LoginAndRegisterView : View {
 }
 
 struct LoginView : View {
+    @State var email : String = ""
+    @State var password : String = ""
+    
     var body : some View {
-        Text("Login")
+        ScrollView {
+            VStack(alignment: .leading) {
+                Text("Email")
+                .foregroundColor(Color("Dark-Cyan"))
+                TextField(
+                    text: $email,
+                    label: {
+                        Text("text@example.com").foregroundColor(.gray)
+                    })
+                    .foregroundColor(.white)
+                Divider()
+                    .frame(height: 1)
+                    .background(Color("Dark-Cyan"))
+                    .padding(.bottom)
+                
+                SecureField(
+                    text: $password,
+                    label: {
+                        Text("Password here...").foregroundColor(.gray)
+                    })
+                    .foregroundColor(.white)
+                Divider()
+                    .frame(height: 1)
+                    .background(Color("Dark-Cyan"))
+                    .padding(.bottom)
+                
+            }.padding(.horizontal, 30)
+        }
     }
 }
 
