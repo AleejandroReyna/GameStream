@@ -66,18 +66,24 @@ struct LoginView : View {
     var body : some View {
         ScrollView {
             VStack(alignment: .leading) {
+                
                 Text("Email")
                 .foregroundColor(Color("Dark-Cyan"))
+                
                 TextField(
                     text: $email,
                     label: {
                         Text("text@example.com").foregroundColor(.gray)
                     })
                     .foregroundColor(.white)
+                
                 Divider()
                     .frame(height: 1)
                     .background(Color("Dark-Cyan"))
                     .padding(.bottom)
+                
+                Text("Password")
+                .foregroundColor(Color("Dark-Cyan"))
                 
                 SecureField(
                     text: $password,
@@ -85,12 +91,37 @@ struct LoginView : View {
                         Text("Password here...").foregroundColor(.gray)
                     })
                     .foregroundColor(.white)
+                
                 Divider()
                     .frame(height: 1)
                     .background(Color("Dark-Cyan"))
                     .padding(.bottom)
                 
+                HStack{
+                    Spacer()
+                    Button("Forgot your password?") {
+                    }
+                    .foregroundColor(Color("Dark-Cyan"))
+                }.padding(.bottom)
+                
+                Button {
+                    print("I'm loging")
+                } label: {
+                    Text("LOGIN")
+                        .fontWeight(.bold)
+                        .foregroundColor(.white)
+                        .frame(maxWidth: .infinity, alignment: .center)
+                        .padding(EdgeInsets(top: 11, leading: 10, bottom: 11, trailing: 10))
+                        .overlay(
+                            RoundedRectangle(cornerRadius: 6)
+                                .stroke(Color("Dark-Cyan"), lineWidth: 1)
+                                .shadow(color: .white, radius: 6)
+                        )
+                }
+
+                
             }.padding(.horizontal, 30)
+                .frame(width: .infinity)
         }
     }
 }
