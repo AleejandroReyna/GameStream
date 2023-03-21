@@ -31,7 +31,7 @@ struct ContentView: View {
 struct LoginAndRegisterView : View {
     
     // MARK: States
-    @State var isLoginActive : Bool = true
+    @State var isLoginActive : Bool = false
     
     var body: some View {
         VStack {
@@ -157,8 +157,115 @@ struct LoginView : View {
 }
 
 struct RegisterView : View {
+    
+    @State var email : String = ""
+    @State var password : String = ""
+    
     var body : some View {
-        Text("Register")
+        ScrollView {
+            VStack(alignment: .leading) {
+                
+                VStack(alignment: .center) {
+                    Text("Choose a profile photo")
+                        .foregroundColor(.white)
+                        .fontWeight(.bold)
+                    
+                    Text("You can change or choose another picture later")
+                        .font(.footnote)
+                        .foregroundColor(.gray)
+                        .fontWeight(.light)
+                        .padding(.bottom)
+                }
+                .frame(maxWidth: .infinity)
+                
+                VStack(alignment: .leading) {
+                    Text("Email")
+                    .foregroundColor(Color("Dark-Cyan"))
+                    
+                    TextField(
+                        text: $email,
+                        label: {
+                            Text("text@example.com").foregroundColor(.gray)
+                        })
+                        .foregroundColor(.white)
+                    
+                    Divider()
+                        .frame(height: 1)
+                        .background(Color("Dark-Cyan"))
+                        .padding(.bottom)
+                    
+                    Text("Password")
+                    .foregroundColor(Color("Dark-Cyan"))
+                    
+                    SecureField(
+                        text: $password,
+                        label: {
+                            Text("Password here...").foregroundColor(.gray)
+                        })
+                        .foregroundColor(.white)
+                    
+                    Divider()
+                        .frame(height: 1)
+                        .background(Color("Dark-Cyan"))
+                        .padding(.bottom)
+                }
+                
+                HStack{
+                    Spacer()
+                    Button("Forgot your password?") {
+                    }
+                    .foregroundColor(Color("Dark-Cyan"))
+                }.padding(.bottom)
+                
+                Button {
+                    print("I'm loging")
+                } label: {
+                    Text("REGISTER")
+                        .fontWeight(.bold)
+                        .foregroundColor(.white)
+                        .frame(maxWidth: .infinity, alignment: .center)
+                        .padding(EdgeInsets(top: 11, leading: 10, bottom: 11, trailing: 10))
+                        .overlay(
+                            RoundedRectangle(cornerRadius: 6)
+                                .stroke(Color("Dark-Cyan"), lineWidth: 1)
+                                .shadow(color: .white, radius: 6)
+                        )
+                }
+                .padding(.bottom, 60)
+                
+                Text("Login with social media accounts")
+                    .foregroundColor(.white)
+                    .frame(maxWidth: .infinity, alignment: .center)
+                    .padding(.bottom, 20)
+                
+                HStack {
+                    Button {
+                        print("Login with Facebook")
+                    } label: {
+                        Text("Facebook")
+                            .frame(maxWidth: .infinity)
+                            .padding(EdgeInsets(top: 10, leading: 15, bottom: 10, trailing: 15))
+                            .foregroundColor(.white)
+                            .background(Color("Light-Blue"))
+                            .cornerRadius(6)
+                    }
+                    
+                    Button {
+                        print("Login with Twitter")
+                    } label: {
+                        Text("Twitter")
+                            .frame(maxWidth: .infinity)
+                            .padding(EdgeInsets(top: 10, leading: 15, bottom: 10, trailing: 15))
+                            .foregroundColor(.white)
+                            .background(Color("Light-Blue"))
+                            .cornerRadius(6)
+                    }
+                }
+
+                
+            }.padding(.horizontal, 30)
+                .frame(width: .infinity)
+        }
     }
 }
 
