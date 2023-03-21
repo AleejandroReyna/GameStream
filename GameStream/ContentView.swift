@@ -31,7 +31,7 @@ struct ContentView: View {
 struct LoginAndRegisterView : View {
     
     // MARK: States
-    @State var isLoginActive : Bool = false
+    @State var isLoginActive : Bool = true
     
     var body: some View {
         VStack {
