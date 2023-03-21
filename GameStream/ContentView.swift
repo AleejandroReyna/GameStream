@@ -118,6 +118,36 @@ struct LoginView : View {
                                 .shadow(color: .white, radius: 6)
                         )
                 }
+                .padding(.bottom, 60)
+                
+                Text("Login with social media accounts")
+                    .foregroundColor(.white)
+                    .frame(maxWidth: .infinity, alignment: .center)
+                    .padding(.bottom, 20)
+                
+                HStack {
+                    Button {
+                        print("Login with Facebook")
+                    } label: {
+                        Text("Facebook")
+                            .frame(maxWidth: .infinity)
+                            .padding(EdgeInsets(top: 10, leading: 15, bottom: 10, trailing: 15))
+                            .foregroundColor(.white)
+                            .background(Color("Light-Blue"))
+                            .cornerRadius(6)
+                    }
+                    
+                    Button {
+                        print("Login with Twitter")
+                    } label: {
+                        Text("Twitter")
+                            .frame(maxWidth: .infinity)
+                            .padding(EdgeInsets(top: 10, leading: 15, bottom: 10, trailing: 15))
+                            .foregroundColor(.white)
+                            .background(Color("Light-Blue"))
+                            .cornerRadius(6)
+                    }
+                }
 
                 
             }.padding(.horizontal, 30)
