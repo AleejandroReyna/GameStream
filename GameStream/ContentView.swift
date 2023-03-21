@@ -160,6 +160,7 @@ struct RegisterView : View {
     
     @State var email : String = ""
     @State var password : String = ""
+    @State var passwordConfirmation : String = ""
     
     var body : some View {
         ScrollView {
@@ -175,6 +176,21 @@ struct RegisterView : View {
                         .foregroundColor(.gray)
                         .fontWeight(.light)
                         .padding(.bottom)
+                    
+                    Button(action: takePhoto) {
+                        
+                        ZStack {
+                            Image("Default-Avatar")
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                                .frame(width: 80, height: 80)
+                            
+                            Image(systemName: "camera")
+                                .foregroundColor(.white)
+                                
+                        }
+                    }
+                    .padding(.bottom)
                 }
                 .frame(maxWidth: .infinity)
                 
@@ -200,7 +216,22 @@ struct RegisterView : View {
                     SecureField(
                         text: $password,
                         label: {
-                            Text("Password here...").foregroundColor(.gray)
+                            Text("New Password").foregroundColor(.gray)
+                        })
+                        .foregroundColor(.white)
+                    
+                    Divider()
+                        .frame(height: 1)
+                        .background(Color("Dark-Cyan"))
+                        .padding(.bottom)
+                    
+                    Text("Confirm Password")
+                    .foregroundColor(Color("Dark-Cyan"))
+                    
+                    SecureField(
+                        text: $passwordConfirmation,
+                        label: {
+                            Text("Password Confirmation").foregroundColor(.gray)
                         })
                         .foregroundColor(.white)
                     
@@ -210,15 +241,8 @@ struct RegisterView : View {
                         .padding(.bottom)
                 }
                 
-                HStack{
-                    Spacer()
-                    Button("Forgot your password?") {
-                    }
-                    .foregroundColor(Color("Dark-Cyan"))
-                }.padding(.bottom)
-                
                 Button {
-                    print("I'm loging")
+                    print("I'm registering")
                 } label: {
                     Text("REGISTER")
                         .fontWeight(.bold)
@@ -233,7 +257,7 @@ struct RegisterView : View {
                 }
                 .padding(.bottom, 60)
                 
-                Text("Login with social media accounts")
+                Text("Or register with social media accounts")
                     .foregroundColor(.white)
                     .frame(maxWidth: .infinity, alignment: .center)
                     .padding(.bottom, 20)
@@ -267,6 +291,10 @@ struct RegisterView : View {
                 .frame(width: .infinity)
         }
     }
+}
+
+func takePhoto() {
+    print("take photo here")
 }
 
 struct ContentView_Previews: PreviewProvider {
