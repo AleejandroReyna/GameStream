@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct HomeView: View {
+    @State var selectedTab : String = "home"
     var body: some View {
         
         ZStack {
@@ -22,28 +23,34 @@ struct HomeView: View {
                     .padding(.bottom, 20)
                     .padding(.top, 10)
                 
-                TabView {
-                    Text("Home")
-                        .tabItem {
-                            Image(systemName: "house")
-                            Text("Home")
-                        }
+                TabView(selection: $selectedTab) {
                     Text("Profile")
                         .tabItem {
                             Image(systemName: "person")
                             Text("Profile")
                         }
+                        .tag("profile")
+                    
                     Text("Games")
                         .tabItem {
                             Image(systemName: "gamecontroller")
                             Text("Games")
                         }
+                        .tag("games")
+                    
+                    Text("Home")
+                        .tabItem {
+                            Image(systemName: "house")
+                            Text("Home")
+                        }
+                        .tag("home")
                     
                     Text("Favorites")
                         .tabItem {
                             Image(systemName: "heart")
                             Text("Favorites")
                         }
+                        .tag("favorites")
                 }
             }
             
