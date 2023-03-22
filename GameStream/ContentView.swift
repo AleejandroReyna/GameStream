@@ -15,7 +15,7 @@ struct ContentView: View {
             
             ZStack {
                 
-                Color(UIColor(red: 19 / 255, green: 30 / 255, blue: 53 / 255, alpha: 1)).ignoresSafeArea()
+                Color("Dark-Blue").ignoresSafeArea()
                 
                 VStack {
                     Image("logo")
