@@ -8,7 +8,10 @@
 import SwiftUI
 
 struct HomeView: View {
+    // MARK: States
     @State var selectedTab : String = "home"
+    
+    // MARK: Body
     var body: some View {
         
         ZStack {
@@ -38,7 +41,7 @@ struct HomeView: View {
                         }
                         .tag("games")
                     
-                    Text("Home")
+                    TabHomeView()
                         .tabItem {
                             Image(systemName: "house")
                             Text("Home")
@@ -53,8 +56,20 @@ struct HomeView: View {
                         .tag("favorites")
                 }
             }
-            
         }
+    }
+    
+    // MARK: Initializer
+    init() {
+        UITabBar
+            .appearance()
+            .backgroundColor = UIColor(Color("TabBar-Background"))
+        UITabBar
+            .appearance()
+            .isTranslucent = true
+        UITabBar
+            .appearance()
+            .unselectedItemTintColor = UIColor(Color(.gray))
     }
 }
 
