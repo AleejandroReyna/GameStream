@@ -10,19 +10,23 @@ import SwiftUI
 struct ContentView: View {
     // MARK: Default Render
     var body: some View {
-        ZStack {
+        
+        NavigationStack {
             
-            Color(UIColor(red: 19 / 255, green: 30 / 255, blue: 53 / 255, alpha: 1)).ignoresSafeArea()
-            
-            VStack {
-                Image("logo")
-                .resizable()
-                .aspectRatio(contentMode: .fit)
-                .frame(width: 250)
-                .padding(.bottom, 20)
-                .padding(.top, 10)
+            ZStack {
                 
-                LoginAndRegisterView()
+                Color(UIColor(red: 19 / 255, green: 30 / 255, blue: 53 / 255, alpha: 1)).ignoresSafeArea()
+                
+                VStack {
+                    Image("logo")
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .frame(width: 250)
+                    .padding(.bottom, 20)
+                    .padding(.top, 10)
+                    
+                    LoginAndRegisterView()
+                }
             }
         }
     }
@@ -62,6 +66,7 @@ struct LoginAndRegisterView : View {
 struct LoginView : View {
     @State var email : String = ""
     @State var password : String = ""
+    @State var isHomeActive : Bool = false
     
     var body : some View {
         ScrollView {
@@ -105,7 +110,7 @@ struct LoginView : View {
                 }.padding(.bottom)
                 
                 Button {
-                    print("I'm loging")
+                    isHomeActive = true
                 } label: {
                     Text("LOGIN")
                         .fontWeight(.bold)
@@ -149,12 +154,22 @@ struct LoginView : View {
                     }
                 }
 
+
                 
             }.padding(.horizontal, 30)
                 .frame(width: .infinity)
+            
+            
+            NavigationLink(value: "home") {
+                EmptyView()
+            }
+            .navigationDestination(isPresented: $isHomeActive) {
+                HomeView()
+            }
         }
     }
 }
+
 
 struct RegisterView : View {
     
