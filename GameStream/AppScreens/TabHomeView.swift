@@ -24,7 +24,7 @@ struct TabHomeView: View {
                 
                 HStack {
                     Button {
-                        //action here
+                        search()
                     } label: {
                         Image(systemName: "magnifyingglass")
                             .foregroundColor(searchText.isEmpty ? .yellow : Color("Dark-Cyan"))
@@ -45,6 +45,10 @@ struct TabHomeView: View {
             .padding(.horizontal, 10)
             
         }.toolbar(.hidden)
+    }
+    
+    func search() -> Void {
+        print("User is looking for \(searchText)")
     }
 }
 
