@@ -13,6 +13,7 @@
 		B5447B1029C82D4B00A9FA98 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B5447B0F29C82D4B00A9FA98 /* Preview Assets.xcassets */; };
 		B544E0EB29CAC00800CB69F8 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B544E0EA29CAC00800CB69F8 /* HomeView.swift */; };
 		B544E0ED29CADA6100CB69F8 /* TabHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B544E0EC29CADA6100CB69F8 /* TabHomeView.swift */; };
+		B54B660129D15B9800382261 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B54B660029D15B9800382261 /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +24,7 @@
 		B5447B0F29C82D4B00A9FA98 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		B544E0EA29CAC00800CB69F8 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		B544E0EC29CADA6100CB69F8 /* TabHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabHomeView.swift; sourceTree = "<group>"; };
+		B54B660029D15B9800382261 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,7 @@
 				B5447B0829C82D4800A9FA98 /* GameStreamApp.swift */,
 				B5447B0C29C82D4B00A9FA98 /* Assets.xcassets */,
 				B5447B0E29C82D4B00A9FA98 /* Preview Content */,
+				B54B660029D15B9800382261 /* Constants.swift */,
 			);
 			path = GameStream;
 			sourceTree = "<group>";
@@ -151,6 +154,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B54B660129D15B9800382261 /* Constants.swift in Sources */,
 				B544E0EB29CAC00800CB69F8 /* HomeView.swift in Sources */,
 				B5447B0B29C82D4800A9FA98 /* ContentView.swift in Sources */,
 				B5447B0929C82D4800A9FA98 /* GameStreamApp.swift in Sources */,
