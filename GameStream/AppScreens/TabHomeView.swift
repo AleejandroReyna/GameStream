@@ -46,6 +46,7 @@ struct TabHomeView: View {
                 ScrollView {
                     PopularSubModule()
                     CategoriesSubModule()
+                    RecommendedSubModule()
                 }
             }
             .padding(.horizontal, 10)
@@ -73,7 +74,6 @@ struct PopularSubModule:View {
                 .padding(.top)
             
             Button {
-                print(url)
                 isPlayerActive = true
             } label: {
                 ZStack {
@@ -120,7 +120,6 @@ struct CategoriesSubModule : View {
         
         ScrollView(.horizontal, showsIndicators: false) {
             HStack {
-                
                 
                 Button {
                     print("category")
@@ -181,8 +180,55 @@ struct CategoriesSubModule : View {
                             .frame(width: 42, height: 42)
                     }
                 }
+            }
+        }
+    }
+}
+
+struct RecommendedSubModule : View {
+    @State var url = "https://cdn.cloudflare.steamstatic.com/steam/apps/256658589/movie480.mp4"
+    @State var isPlayerActive = false
+    
+    var body : some View {
+        Text("RECOMMENDED FOR YOU")
+            .font(.title3)
+            .foregroundColor(.white)
+            .bold()
+            .frame(minWidth: 0, maxWidth: .infinity, alignment: .leading)
+            .padding(.top)
+        
+        ScrollView(.horizontal, showsIndicators: false) {
+            HStack {
+                Button {
+                    isPlayerActive = true
+                } label: {
+                    Image("Default-Featured-Image").resizable().scaledToFit()
+                        .frame(width: 240, height: 135)
+                }
+                
+                Button {
+                    isPlayerActive = true
+                } label: {
+                    Image("Default-Featured-Image").resizable().scaledToFit()
+                        .frame(width: 240, height: 135)
+                }
+                
+                Button {
+                    isPlayerActive = true
+                } label: {
+                    Image("Default-Featured-Image").resizable().scaledToFit()
+                        .frame(width: 240, height: 135)
+                }
 
             }
+        }
+        
+        NavigationLink(value: "showVideo") {
+            EmptyView()
+        }
+        .navigationDestination(isPresented: $isPlayerActive) {
+            VideoPlayer(player: AVPlayer(url: URL(string: url)!))
+                .frame(width: 400, height: 300)
         }
     }
 }
