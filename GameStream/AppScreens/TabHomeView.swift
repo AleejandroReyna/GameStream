@@ -8,14 +8,41 @@
 import SwiftUI
 
 struct TabHomeView: View {
+    @State var searchText = ""
+    
     var body: some View {
         ZStack {
             Color("Dark-Blue").ignoresSafeArea()
             
             VStack {
-                Text("Home")
+                Image("logo")
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .frame(width: 250)
+                    .padding(.bottom, 5)
+                    .padding(.top, 10)
+                
+                HStack {
+                    Button {
+                        //action here
+                    } label: {
+                        Image(systemName: "magnifyingglass")
+                            .foregroundColor(searchText.isEmpty ? .yellow : Color("Dark-Cyan"))
+                    }
+                    
+                    TextField(
+                        text: $searchText,
+                        label: {
+                            Text("Search a video").foregroundColor(Color("Text-Gray"))
+                        })
+                        .foregroundColor(.white)
+
+                }
+                .padding([.top, .leading, .bottom], 11)
+                .background(Color("Light-Blue"))
+                .clipShape(Capsule())
             }
-            .padding(.horizontal, 30)
+            .padding(.horizontal, 10)
             
         }.toolbar(.hidden)
     }
