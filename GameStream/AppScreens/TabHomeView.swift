@@ -45,6 +45,7 @@ struct TabHomeView: View {
                 
                 ScrollView {
                     PopularSubModule()
+                    CategoriesSubModule()
                 }
             }
             .padding(.horizontal, 10)
@@ -105,6 +106,84 @@ struct PopularSubModule:View {
                 .frame(width: 400, height: 300)
         }
 
+    }
+}
+
+struct CategoriesSubModule : View {
+    var body : some View {
+        Text("SUGGESTED CATEGORIES")
+            .font(.title3)
+            .foregroundColor(.white)
+            .bold()
+            .frame(minWidth: 0, maxWidth: .infinity, alignment: .leading)
+            .padding(.top)
+        
+        ScrollView(.horizontal, showsIndicators: false) {
+            HStack {
+                
+                
+                Button {
+                    print("category")
+                } label: {
+                    ZStack {
+                        RoundedRectangle(cornerRadius: 8)
+                            .fill(Color("Light-Blue"))
+                            .frame(width: 160, height: 90)
+                        
+                        Image("game")
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 42, height: 42)
+                    }
+                }
+                
+                Button {
+                    print("category")
+                } label: {
+                    ZStack {
+                        RoundedRectangle(cornerRadius: 8)
+                            .fill(Color("Light-Blue"))
+                            .frame(width: 160, height: 90)
+                        
+                        Image("shooter")
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 42, height: 42)
+                    }
+                }
+                
+                Button {
+                    print("category")
+                } label: {
+                    ZStack {
+                        RoundedRectangle(cornerRadius: 8)
+                            .fill(Color("Light-Blue"))
+                            .frame(width: 160, height: 90)
+                        
+                        Image("rpg")
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 42, height: 42)
+                    }
+                }
+                
+                Button {
+                    print("category")
+                } label: {
+                    ZStack {
+                        RoundedRectangle(cornerRadius: 8)
+                            .fill(Color("Light-Blue"))
+                            .frame(width: 160, height: 90)
+                        
+                        Image("world")
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 42, height: 42)
+                    }
+                }
+
+            }
+        }
     }
 }
 
