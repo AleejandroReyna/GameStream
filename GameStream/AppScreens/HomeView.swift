@@ -15,46 +15,35 @@ struct HomeView: View {
     var body: some View {
         
         ZStack {
-            
-            Color("Dark-Blue").ignoresSafeArea()
-            
-            VStack {
-                Image("logo")
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .frame(width: 250)
-                    .padding(.bottom, 20)
-                    .padding(.top, 10)
                 
-                TabView(selection: $selectedTab) {
-                    Text("Profile")
-                        .tabItem {
-                            Image(systemName: "person")
-                            Text("Profile")
-                        }
-                        .tag("profile")
-                    
-                    Text("Games")
-                        .tabItem {
-                            Image(systemName: "gamecontroller")
-                            Text("Games")
-                        }
-                        .tag("games")
-                    
-                    TabHomeView()
-                        .tabItem {
-                            Image(systemName: "house")
-                            Text("Home")
-                        }
-                        .tag("home")
-                    
-                    Text("Favorites")
-                        .tabItem {
-                            Image(systemName: "heart")
-                            Text("Favorites")
-                        }
-                        .tag("favorites")
-                }
+            TabView(selection: $selectedTab) {
+                Text("Profile")
+                    .tabItem {
+                        Image(systemName: "person")
+                        Text("Profile")
+                    }
+                    .tag("profile")
+                
+                Text("Games")
+                    .tabItem {
+                        Image(systemName: "gamecontroller")
+                        Text("Games")
+                    }
+                    .tag("games")
+                
+                TabHomeView()
+                    .tabItem {
+                        Image(systemName: "house")
+                        Text("Home")
+                    }
+                    .tag("home")
+                
+                Text("Favorites")
+                    .tabItem {
+                        Image(systemName: "heart")
+                        Text("Favorites")
+                    }
+                    .tag("favorites")
             }
         }
     }
