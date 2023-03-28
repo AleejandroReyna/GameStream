@@ -111,8 +111,7 @@ struct DetailGallery : View {
                                 .resizable()
                                 .aspectRatio(contentMode: .fill)
                         } placeholder: {
-                            Text("loading...")
-                                .foregroundColor(.white)
+                            EmptyView()
                         }
                     }
                 }
