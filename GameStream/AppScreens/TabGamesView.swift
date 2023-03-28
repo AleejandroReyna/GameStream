@@ -30,6 +30,7 @@ struct TabGamesView: View {
                             gameItem in
                             Button {
                                 self.game = gameItem
+                                self.isGameViewActive = true
                             } label: {
                                 if let imageUrl = gameItem.galleryImages![0] {
                                     AsyncImage(url: URL(string: imageUrl)) { Image in
@@ -50,6 +51,14 @@ struct TabGamesView: View {
                 }
                 
             }.padding(.horizontal, 10)
+            if let selectedGame = self.game {
+                NavigationLink(value: "gameDetail") {
+                    EmptyView()
+                }
+                .navigationDestination(isPresented: $isGameViewActive) {
+                    GameView(game: selectedGame)
+                }
+            }
         }
         .onAppear() {
             if !games.info.isEmpty {

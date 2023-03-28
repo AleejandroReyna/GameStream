@@ -17,6 +17,7 @@
 		B5964DB429D2710700DCA6F7 /* TabGamesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5964DB329D2710700DCA6F7 /* TabGamesView.swift */; };
 		B5964DB929D2736600DCA6F7 /* GamesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5964DB829D2736600DCA6F7 /* GamesModel.swift */; };
 		B5964DBB29D2738200DCA6F7 /* GamesParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5964DBA29D2738200DCA6F7 /* GamesParser.swift */; };
+		B5964DBD29D297DE00DCA6F7 /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5964DBC29D297DE00DCA6F7 /* GameView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +32,7 @@
 		B5964DB329D2710700DCA6F7 /* TabGamesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabGamesView.swift; sourceTree = "<group>"; };
 		B5964DB829D2736600DCA6F7 /* GamesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamesModel.swift; sourceTree = "<group>"; };
 		B5964DBA29D2738200DCA6F7 /* GamesParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamesParser.swift; sourceTree = "<group>"; };
+		B5964DBC29D297DE00DCA6F7 /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +90,7 @@
 				B544E0EA29CAC00800CB69F8 /* HomeView.swift */,
 				B544E0EC29CADA6100CB69F8 /* TabHomeView.swift */,
 				B5964DB329D2710700DCA6F7 /* TabGamesView.swift */,
+				B5964DBC29D297DE00DCA6F7 /* GameView.swift */,
 			);
 			path = AppScreens;
 			sourceTree = "<group>";
@@ -183,6 +186,7 @@
 				B544E0EB29CAC00800CB69F8 /* HomeView.swift in Sources */,
 				B5964DBB29D2738200DCA6F7 /* GamesParser.swift in Sources */,
 				B5964DB929D2736600DCA6F7 /* GamesModel.swift in Sources */,
+				B5964DBD29D297DE00DCA6F7 /* GameView.swift in Sources */,
 				B5447B0B29C82D4800A9FA98 /* ContentView.swift in Sources */,
 				B5447B0929C82D4800A9FA98 /* GameStreamApp.swift in Sources */,
 				B5964DB429D2710700DCA6F7 /* TabGamesView.swift in Sources */,
