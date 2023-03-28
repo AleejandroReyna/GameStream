@@ -6,7 +6,7 @@
 //
 
 // MARK: - GameParser
-struct GameParser: Codable {
+struct GameParser: Codable, Hashable {
     let title, studio, contentRaiting, publicationYear: String?
     let description: String?
     let platforms, tags: [String]?
@@ -15,7 +15,7 @@ struct GameParser: Codable {
 }
 
 // MARK: - VideosUrls
-struct VideosUrlsParser: Codable {
+struct VideosUrlsParser: Codable, Hashable {
     let mobile, tablet: String?
 }
 
