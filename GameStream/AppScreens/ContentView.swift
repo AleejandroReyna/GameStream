@@ -157,7 +157,7 @@ struct LoginView : View {
 
                 
             }.padding(.horizontal, 30)
-                .frame(width: .infinity)
+             .frame(maxWidth: .infinity)
             
             
             NavigationLink(value: "home") {

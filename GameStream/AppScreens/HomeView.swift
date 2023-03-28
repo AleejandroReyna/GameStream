@@ -24,7 +24,7 @@ struct HomeView: View {
                     }
                     .tag("profile")
                 
-                Text("Games")
+                TabGamesView()
                     .tabItem {
                         Image(systemName: "gamecontroller")
                         Text("Games")

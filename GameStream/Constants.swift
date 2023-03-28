@@ -8,5 +8,6 @@
 import Foundation
 
 struct Constants {
-    let defaultEndpoint = "https://gamestreamapi.herokuapp.com/"
+    static let defaultEndpoint = "https://gamestreamapi.herokuapp.com/api"
+    static let gamesEndpoint = Self.defaultEndpoint + "/games"
 }

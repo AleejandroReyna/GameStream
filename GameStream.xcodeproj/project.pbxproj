@@ -14,6 +14,10 @@
 		B544E0EB29CAC00800CB69F8 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B544E0EA29CAC00800CB69F8 /* HomeView.swift */; };
 		B544E0ED29CADA6100CB69F8 /* TabHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B544E0EC29CADA6100CB69F8 /* TabHomeView.swift */; };
 		B54B660129D15B9800382261 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B54B660029D15B9800382261 /* Constants.swift */; };
+		B5964DB429D2710700DCA6F7 /* TabGamesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5964DB329D2710700DCA6F7 /* TabGamesView.swift */; };
+		B5964DB929D2736600DCA6F7 /* GamesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5964DB829D2736600DCA6F7 /* GamesModel.swift */; };
+		B5964DBB29D2738200DCA6F7 /* GamesParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5964DBA29D2738200DCA6F7 /* GamesParser.swift */; };
+		B5964DBD29D297DE00DCA6F7 /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5964DBC29D297DE00DCA6F7 /* GameView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +29,10 @@
 		B544E0EA29CAC00800CB69F8 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		B544E0EC29CADA6100CB69F8 /* TabHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabHomeView.swift; sourceTree = "<group>"; };
 		B54B660029D15B9800382261 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		B5964DB329D2710700DCA6F7 /* TabGamesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabGamesView.swift; sourceTree = "<group>"; };
+		B5964DB829D2736600DCA6F7 /* GamesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamesModel.swift; sourceTree = "<group>"; };
+		B5964DBA29D2738200DCA6F7 /* GamesParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamesParser.swift; sourceTree = "<group>"; };
+		B5964DBC29D297DE00DCA6F7 /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +65,7 @@
 		B5447B0729C82D4800A9FA98 /* GameStream */ = {
 			isa = PBXGroup;
 			children = (
+				B5964DB529D2730900DCA6F7 /* Models */,
 				B544E0E929CABFE100CB69F8 /* AppScreens */,
 				B5447B0829C82D4800A9FA98 /* GameStreamApp.swift */,
 				B5447B0C29C82D4B00A9FA98 /* Assets.xcassets */,
@@ -80,8 +89,27 @@
 				B5447B0A29C82D4800A9FA98 /* ContentView.swift */,
 				B544E0EA29CAC00800CB69F8 /* HomeView.swift */,
 				B544E0EC29CADA6100CB69F8 /* TabHomeView.swift */,
+				B5964DB329D2710700DCA6F7 /* TabGamesView.swift */,
+				B5964DBC29D297DE00DCA6F7 /* GameView.swift */,
 			);
 			path = AppScreens;
+			sourceTree = "<group>";
+		};
+		B5964DB529D2730900DCA6F7 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				B5964DB629D2733200DCA6F7 /* Games */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		B5964DB629D2733200DCA6F7 /* Games */ = {
+			isa = PBXGroup;
+			children = (
+				B5964DB829D2736600DCA6F7 /* GamesModel.swift */,
+				B5964DBA29D2738200DCA6F7 /* GamesParser.swift */,
+			);
+			path = Games;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -156,8 +184,12 @@
 			files = (
 				B54B660129D15B9800382261 /* Constants.swift in Sources */,
 				B544E0EB29CAC00800CB69F8 /* HomeView.swift in Sources */,
+				B5964DBB29D2738200DCA6F7 /* GamesParser.swift in Sources */,
+				B5964DB929D2736600DCA6F7 /* GamesModel.swift in Sources */,
+				B5964DBD29D297DE00DCA6F7 /* GameView.swift in Sources */,
 				B5447B0B29C82D4800A9FA98 /* ContentView.swift in Sources */,
 				B5447B0929C82D4800A9FA98 /* GameStreamApp.swift in Sources */,
+				B5964DB429D2710700DCA6F7 /* TabGamesView.swift in Sources */,
 				B544E0ED29CADA6100CB69F8 /* TabHomeView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
