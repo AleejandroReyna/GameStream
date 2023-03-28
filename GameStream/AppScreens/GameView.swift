@@ -21,9 +21,12 @@ struct GameView: View {
                         .frame(height: 300)
                     ScrollView {
                         DetailInfo(game: detailGame)
-                            .padding(.bottom)
+                            .padding(.bottom, 30)
                         
                         DetailGallery(game: detailGame)
+                            .padding(.bottom, 30)
+                        
+                        DetailComments()
                     }
                     .frame(maxWidth: .infinity)
                 }
@@ -100,7 +103,7 @@ struct DetailGallery : View {
             Text("Gallery")
                 .padding(.horizontal, 10)
                 .foregroundColor(.white)
-                .font(.title)
+                .font(.title2)
                 .bold()
             
             ScrollView(.horizontal) {
@@ -121,9 +124,59 @@ struct DetailGallery : View {
     }
 }
 
+struct DetailComments : View {
+    var body : some View {
+        VStack(alignment: .leading) {
+            Text("Comments")
+                .foregroundColor(.white)
+                .font(.title2)
+                .bold()
+            
+            Comment(username: "Geoff Atto", date: "2 days ago", comment: "He visto que como media tiene una gran calificación, y estoy completamente de acuerdo. Es el mejor juego que he jugado sin ninguna duda, combina una buena trama con una buenísima experiencia de juego libre gracias a su inmenso mapa y actividades.")
+            
+        }.frame(maxWidth: .infinity, alignment: .leading)
+         .padding(.horizontal, 10)
+    }
+}
+
 let gridShape = [
     GridItem(.flexible())
 ]
+
+struct Comment : View {
+    var username : String
+    var date : String
+    var comment : String
+    var body : some View {
+        ZStack {
+            RoundedRectangle(cornerRadius: 8)
+                .fill(Color("Light-Blue"))
+            
+            VStack(alignment: .leading) {
+                HStack {
+                    Image("Default-Avatar")
+                        .padding(.trailing, 5)
+                    VStack(alignment: .leading) {
+                        Text(username)
+                            .foregroundColor(.white)
+                            .bold()
+                        Text(date)
+                            .foregroundColor(.white)
+                            .font(.subheadline)
+                    }
+                }
+                .padding(.bottom, 5)
+                Text(comment)
+                    .foregroundColor(.white)
+                    .font(.subheadline)
+            }
+            .frame(maxWidth: .infinity, alignment: .leading)
+            .padding(.horizontal, 15)
+            .padding(.vertical, 15)
+            
+        }.frame(maxWidth: .infinity)
+    }
+}
 
 let testGame : GameParser = GameParser(title: "Sonic", studio: "Sega", contentRaiting: "E+", publicationYear: "1991", description: "Juego de Sega Genesis publicado en 1991 con más de 40 millones de copias vendidas actualmente", platforms: ["PC"], tags: ["plataformas","mascota"], videosUrls: VideosUrlsParser(mobile: "https://dl.dropboxusercontent.com/s/k6g0zwmsxt9qery/TheWitcher480.mp4", tablet: "https://dl.dropboxusercontent.com/s/9faic5dtebavp1o/TheWitcherMax.mp4"),
    galleryImages: [ "https://cdn.cloudflare.steamstatic.com/steam/apps/292030/ss_107600c1337accc09104f7a8aa7f275f23cad096.600x338.jpg",
