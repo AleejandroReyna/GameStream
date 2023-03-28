@@ -31,7 +31,16 @@ struct TabGamesView: View {
                             Button {
                                 self.game = gameItem
                             } label: {
-                                HStack {
+                                if let imageUrl = gameItem.galleryImages![0] {
+                                    AsyncImage(url: URL(string: imageUrl)) { Image in
+                                        Image
+                                            .resizable()
+                                            .aspectRatio(contentMode: .fit)
+                                            .clipShape(RoundedRectangle.init(cornerRadius: 4))
+                                    } placeholder: {
+                                        Text(gameItem.title!)
+                                    }
+                                } else {
                                     Text(gameItem.title!)
                                 }
                             }
