@@ -51,13 +51,12 @@ struct TabGamesView: View {
                 }
                 
             }.padding(.horizontal, 10)
-            if let selectedGame = self.game {
-                NavigationLink(value: "gameDetail") {
-                    EmptyView()
-                }
-                .navigationDestination(isPresented: $isGameViewActive) {
-                    GameView(game: selectedGame)
-                }
+
+            NavigationLink(value: "gameDetail") {
+                EmptyView()
+            }
+            .navigationDestination(isPresented: $isGameViewActive) {
+                GameView(game: self.game)
             }
         }
         .onAppear() {
