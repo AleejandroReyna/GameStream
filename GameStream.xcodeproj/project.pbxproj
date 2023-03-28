@@ -14,6 +14,7 @@
 		B544E0EB29CAC00800CB69F8 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B544E0EA29CAC00800CB69F8 /* HomeView.swift */; };
 		B544E0ED29CADA6100CB69F8 /* TabHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B544E0EC29CADA6100CB69F8 /* TabHomeView.swift */; };
 		B54B660129D15B9800382261 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B54B660029D15B9800382261 /* Constants.swift */; };
+		B5964DB429D2710700DCA6F7 /* TabGamesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5964DB329D2710700DCA6F7 /* TabGamesView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +26,7 @@
 		B544E0EA29CAC00800CB69F8 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		B544E0EC29CADA6100CB69F8 /* TabHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabHomeView.swift; sourceTree = "<group>"; };
 		B54B660029D15B9800382261 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		B5964DB329D2710700DCA6F7 /* TabGamesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabGamesView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +82,7 @@
 				B5447B0A29C82D4800A9FA98 /* ContentView.swift */,
 				B544E0EA29CAC00800CB69F8 /* HomeView.swift */,
 				B544E0EC29CADA6100CB69F8 /* TabHomeView.swift */,
+				B5964DB329D2710700DCA6F7 /* TabGamesView.swift */,
 			);
 			path = AppScreens;
 			sourceTree = "<group>";
@@ -158,6 +161,7 @@
 				B544E0EB29CAC00800CB69F8 /* HomeView.swift in Sources */,
 				B5447B0B29C82D4800A9FA98 /* ContentView.swift in Sources */,
 				B5447B0929C82D4800A9FA98 /* GameStreamApp.swift in Sources */,
+				B5964DB429D2710700DCA6F7 /* TabGamesView.swift in Sources */,
 				B544E0ED29CADA6100CB69F8 /* TabHomeView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
