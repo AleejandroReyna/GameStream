@@ -41,6 +41,8 @@ struct PopularSubModule:View {
     @State var isInfoEmpty : Bool = false
     @State var isGameViewActive = false
     @State var isPlayerActive = false
+    @State var activeGame : GameParser? = nil
+    
     @ObservedObject var searchResults = SearchModel()
     
     @State var url = "https://cdn.cloudflare.steamstatic.com/steam/apps/256658589/movie480.mp4"
@@ -104,12 +106,11 @@ struct PopularSubModule:View {
             }
         }
         
-        NavigationLink(value: "showVideo") {
+        NavigationLink(value: "gameDetail") {
             EmptyView()
         }
-        .navigationDestination(isPresented: $isPlayerActive) {
-            VideoPlayer(player: AVPlayer(url: URL(string: url)!))
-                .frame(width: 400, height: 300)
+        .navigationDestination(isPresented: $isGameViewActive) {
+            GameView(game: activeGame)
         }
 
     }
@@ -118,7 +119,13 @@ struct PopularSubModule:View {
         searchResults.requestData(search: name) { finished in
             if finished {
                 DispatchQueue.main.async {
-                    print("Elements Qty: ", searchResults.info.count)
+                    
+                    if searchResults.info.count == 0 {
+                        isInfoEmpty = true
+                    } else {
+                        activeGame = searchResults.info.first
+                        isGameViewActive = true
+                    }
                 }
             }
         }
