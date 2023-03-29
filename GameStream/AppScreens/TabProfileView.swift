@@ -111,7 +111,7 @@ struct SettingsModule : View {
             EmptyView()
         }
         .navigationDestination(isPresented: $isEditProfileViewActive) {
-            Text("Edit here")
+            EditProfileView()
         }
     }
 }
