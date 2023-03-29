@@ -9,6 +9,8 @@ import SwiftUI
 
 struct TabProfileView: View {
     @State var username = "@aleejandroreyna"
+    @State var isToggleOn = true
+    @State var isEditProfileViewActive = false
     
     var body: some View {
         ZStack {
@@ -48,6 +50,56 @@ struct SettingsModule : View {
                 .font(.title2)
                 .bold()
                 .padding(.horizontal, 10)
+                .padding(.bottom, 20)
+            
+            Button {
+                //
+            } label: {
+                HStack {
+                    Text("Account")
+                        .foregroundColor(.white)
+                    Spacer()
+                    Image(systemName: "chevron.right")
+                }.padding(EdgeInsets(top: 20, leading: 15, bottom: 20, trailing: 15))
+                    .background(Color("Light-Blue"))
+            }
+            
+            Button {
+                //
+            } label: {
+                HStack {
+                    Text("Notifications")
+                        .foregroundColor(.white)
+                    Spacer()
+                    Image(systemName: "chevron.right")
+                }.padding(EdgeInsets(top: 20, leading: 15, bottom: 20, trailing: 15))
+                    .background(Color("Light-Blue"))
+            }
+            
+            Button {
+                //
+            } label: {
+                HStack {
+                    Text("Edit Profile")
+                        .foregroundColor(.white)
+                    Spacer()
+                    Image(systemName: "chevron.right")
+                }.padding(EdgeInsets(top: 20, leading: 15, bottom: 20, trailing: 15))
+                    .background(Color("Light-Blue"))
+            }
+            
+            Button {
+                //
+            } label: {
+                HStack {
+                    Text("Rate This App")
+                        .foregroundColor(.white)
+                    Spacer()
+                    Image(systemName: "chevron.right")
+                }.padding(EdgeInsets(top: 20, leading: 15, bottom: 20, trailing: 15))
+                    .background(Color("Light-Blue"))
+            }
+
             
         }.frame(maxWidth: .infinity, alignment: .leading)
     }
