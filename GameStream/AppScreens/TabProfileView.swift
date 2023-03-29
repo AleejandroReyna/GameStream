@@ -80,7 +80,7 @@ struct SettingsModule : View {
             }
             
             Button {
-                //
+                isEditProfileViewActive = true
             } label: {
                 HStack {
                     Text("Edit Profile")
@@ -106,6 +106,13 @@ struct SettingsModule : View {
             
         }.frame(maxWidth: .infinity, alignment: .leading)
             .padding(.bottom, 10)
+        
+        NavigationLink(value: "editProfile") {
+            EmptyView()
+        }
+        .navigationDestination(isPresented: $isEditProfileViewActive) {
+            Text("Edit here")
+        }
     }
 }
 
