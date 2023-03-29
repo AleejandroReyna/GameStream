@@ -9,8 +9,6 @@ import SwiftUI
 
 struct TabProfileView: View {
     @State var username = "@aleejandroreyna"
-    @State var isToggleOn = true
-    @State var isEditProfileViewActive = false
     
     var body: some View {
         ZStack {
@@ -34,7 +32,9 @@ struct TabProfileView: View {
                 }.padding(EdgeInsets(top: 30, leading: 0, bottom: 60, trailing: 0))
                 
                 SettingsModule()
+                Spacer()
             }
+            
         }.onAppear() {
             print("exec get user info here")
         }
@@ -42,6 +42,9 @@ struct TabProfileView: View {
 }
 
 struct SettingsModule : View {
+    @State var isToggleOn = true
+    @State var isEditProfileViewActive = false
+    
     var body : some View {
         VStack(alignment: .leading) {
             
@@ -71,7 +74,7 @@ struct SettingsModule : View {
                     Text("Notifications")
                         .foregroundColor(.white)
                     Spacer()
-                    Image(systemName: "chevron.right")
+                    Toggle("", isOn: $isToggleOn)
                 }.padding(EdgeInsets(top: 20, leading: 15, bottom: 20, trailing: 15))
                     .background(Color("Light-Blue"))
             }
@@ -102,6 +105,7 @@ struct SettingsModule : View {
 
             
         }.frame(maxWidth: .infinity, alignment: .leading)
+            .padding(.bottom, 10)
     }
 }
 
