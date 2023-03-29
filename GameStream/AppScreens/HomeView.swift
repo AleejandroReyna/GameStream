@@ -17,7 +17,7 @@ struct HomeView: View {
         ZStack {
                 
             TabView(selection: $selectedTab) {
-                Text("Profile")
+                TabProfileView()
                     .tabItem {
                         Image(systemName: "person")
                         Text("Profile")
