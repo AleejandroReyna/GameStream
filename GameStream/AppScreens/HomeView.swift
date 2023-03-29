@@ -38,7 +38,7 @@ struct HomeView: View {
                     }
                     .tag("home")
                 
-                Text("Favorites")
+                TabFavoritesView()
                     .tabItem {
                         Image(systemName: "heart")
                         Text("Favorites")
