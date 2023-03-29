@@ -19,7 +19,7 @@ struct TabGamesView: View {
             VStack {
                 Text("Games")
                     .foregroundColor(.white)
-                    .font(.title)
+                    .font(.largeTitle)
                     .bold()
                     .padding(.top, 16)
                     .padding(.bottom, 64)

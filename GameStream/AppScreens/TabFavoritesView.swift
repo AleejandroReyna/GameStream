@@ -17,8 +17,8 @@ struct TabFavoritesView: View {
             Color("Dark-Blue").ignoresSafeArea()
             
             VStack {
-                Text("FAVORITES")
-                    .font(.title)
+                Text("Favorites")
+                    .font(.largeTitle)
                     .bold()
                     .foregroundColor(.white)
                     .padding(.bottom, 9)
