@@ -41,6 +41,7 @@ struct EditProfileForm : View {
     @State var email : String = ""
     @State var password : String = ""
     @State var name : String = ""
+    var userData = UserDataModel()
     
     var body : some View {
         VStack(alignment: .leading) {
@@ -112,7 +113,8 @@ struct EditProfileForm : View {
     }
     
     func updateData() -> Void {
-        print("updating")
+        let result = userData.saveData(email: email, password: password, name: name)
+        print(result)
     }
 }
 
