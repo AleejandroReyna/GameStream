@@ -9,7 +9,6 @@ import SwiftUI
 import AVKit
 
 struct TabHomeView: View {
-    @State var searchText = ""
     
     var body: some View {
         ZStack {
@@ -23,26 +22,6 @@ struct TabHomeView: View {
                     .padding(.bottom, 5)
                     .padding(.top, 10)
                 
-                HStack {
-                    Button {
-                        search()
-                    } label: {
-                        Image(systemName: "magnifyingglass")
-                            .foregroundColor(searchText.isEmpty ? .yellow : Color("Dark-Cyan"))
-                    }
-                    
-                    TextField(
-                        text: $searchText,
-                        label: {
-                            Text("Search a video").foregroundColor(Color("Text-Gray"))
-                        })
-                        .foregroundColor(.white)
-
-                }
-                .padding([.top, .leading, .bottom], 11)
-                .background(Color("Light-Blue"))
-                .clipShape(Capsule())
-                
                 ScrollView {
                     PopularSubModule()
                     CategoriesSubModule()
@@ -54,19 +33,47 @@ struct TabHomeView: View {
             
         }.toolbar(.hidden)
     }
-    
-    func search() -> Void {
-        print("User is looking for \(searchText)")
-    }
 }
 
 struct PopularSubModule:View {
-    @State var url = "https://cdn.cloudflare.steamstatic.com/steam/apps/256658589/movie480.mp4"
-    @State var isPlayerActive = false
-    let urlVideos:[String] = ["https://cdn.cloudflare.steamstatic.com/steam/apps/256658589/movie480.mp4","https://cdn.cloudflare.steamstatic.com/steam/apps/256671638/movie480.mp4","https://cdn.cloudflare.steamstatic.com/steam/apps/256720061/movie480.mp4","https://cdn.cloudflare.steamstatic.com/steam/apps/256814567/movie480.mp4","https://cdn.cloudflare.steamstatic.com/steam/apps/256705156/movie480.mp4","https://cdn.cloudflare.steamstatic.com/steam/apps/256801252/movie480.mp4","https://cdn.cloudflare.steamstatic.com/steam/apps/256757119/movie480.mp4"]
     
+    @State var searchText = ""
+    @State var isInfoEmpty : Bool = false
+    @State var isGameViewActive = false
+    @State var isPlayerActive = false
+    @State var activeGame : GameParser? = nil
+    
+    @ObservedObject var searchResults = SearchModel()
+    
+    @State var url = "https://cdn.cloudflare.steamstatic.com/steam/apps/256658589/movie480.mp4"
+
     var body : some View {
         VStack {
+            
+            HStack {
+                Button {
+                    search(name: searchText)
+                } label: {
+                    Image(systemName: "magnifyingglass")
+                        .foregroundColor(searchText.isEmpty ? .yellow : Color("Dark-Cyan"))
+                }
+                .alert(isPresented: $isInfoEmpty) {
+                    Alert(title: Text("Error"), message: Text("Game not found"), dismissButton: .default(Text("Close")))
+                }
+                
+                TextField(
+                    text: $searchText,
+                    label: {
+                        Text("Search a video").foregroundColor(Color("Text-Gray"))
+                    })
+                    .foregroundColor(.white)
+
+            }
+            .padding([.top, .leading, .bottom], 11)
+            .background(Color("Light-Blue"))
+            .clipShape(Capsule())
+
+            
             Text("MOST POPULAR")
                 .font(.title3)
                 .foregroundColor(.white)
@@ -99,14 +106,29 @@ struct PopularSubModule:View {
             }
         }
         
-        NavigationLink(value: "showVideo") {
+        NavigationLink(value: "gameDetail") {
             EmptyView()
         }
-        .navigationDestination(isPresented: $isPlayerActive) {
-            VideoPlayer(player: AVPlayer(url: URL(string: url)!))
-                .frame(width: 400, height: 300)
+        .navigationDestination(isPresented: $isGameViewActive) {
+            GameView(game: activeGame)
         }
 
+    }
+    
+    func search(name: String) -> Void {
+        searchResults.requestData(search: name) { finished in
+            if finished {
+                DispatchQueue.main.async {
+                    
+                    if searchResults.info.count == 0 {
+                        isInfoEmpty = true
+                    } else {
+                        activeGame = searchResults.info.first
+                        isGameViewActive = true
+                    }
+                }
+            }
+        }
     }
 }
 

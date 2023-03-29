@@ -20,5 +20,5 @@ struct VideosUrlsParser: Codable, Hashable {
 }
 
 struct GamesParser : Codable {
-    let games : [GamesParser]
+    let games : [GameParser]
 }
